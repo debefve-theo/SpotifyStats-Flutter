@@ -1,43 +1,56 @@
-# ROB music
-##### Projet d’examen 2022-2023 - Theo Debefve
+# Seal.fm
+##### Projet d'examen 2022-2023 - Theo Debefve
+
+![logo](./documentation/images/Main.png)
+
 Ce projet va être créé dans le cadre du cours de ”Développement d’applications mobiles”.
 L’objectif de ce projet est de donner un cadre pour développer une application mobile en Flutter afin d’asseoir les concepts vus en cours. Ce projet est aussi une occasion de réfléchir à l’expérience utilisateur sur les petits et moyens écrans.
 
 ## :iphone: Description de l'application
-ROB music a pour but de partager la musique que l'on aime avec ses amis. C'est un réseau social sur lequelle on peut partager nos chansons, album, artiste, playlist préférées avec vos amis. Lorsqu'une chanson vous plaît, vous pourrez l'ajouter simplement à votre playlist ROB qui sera directement synchronisée a votre compte Spotify.
 
-## :zap: Applications existantes
-Après quelques recherches, aucunes applications avec se concept n'existent. 
+Seal.fm est une application qui permet de voir vos musique et artiste préférée sur Spotify. Vous pouvez aussi consulter les musiques les plus écoutées en Belgique et dans le monde. Une simple connexion avec votre compte Spotify sera nécessaire pour utiliser l'application.
 
 ## :dizzy: Fonctionnalités de l'application
-* En tant qu'utilisateur, je veux pouvoir créer un compte afin de pouvoir rejoindre l'application > Sign in
-* En tant qu'utilisateur, je veux pouvoir me connecter pour avoir accès  à l'application > Log in
-* En tant qu'utilisateur, je veux pouvoir consulter les posts de mes amis > Home
-* En tant qu'utilisateur, je veux pouvoir ajouter des amis > ...
-* En tant qu'utilisateur, je veux pouvoir ajouter une réaction aux postes de mes amis > Home
-* En tant qu'utilisateur, je veux pouvoir ajouter un post > Add
-* En tant qu'utilisateur, je veux pouvoir ajouter les musiques de mon fil à ma playlist ROB > playlist
-* En tant qu'utilisateur, je veux pouvoir consulter le profil de mes amis > ...
-* En tant qu'utilisateur, je veux pouvoir modifier mon profil > Profil
-* En tant qu'utilisateur, je veux pouvoir me déconnecter > Profil
 
+* **En tant qu'utilisateur,** je veux pouvoir voir les 5 titres les plus populaires cette semaine en Belgique.
+* **En tant qu'utilisateur,** je veux pouvoir voir les 5 artistes les plus populaires cette semaine en Belgique.
+* **En tant qu'utilisateur,** je veux pouvoir voir les 5 albums les plus populaires cette semaine en Belgique.
+* **En tant qu'utilisateur,** je veux pouvoir consulter la page Top (avec le Top 100) sans me connecter.
+* **En tant qu'utilisateur,** je veux pouvoir me connecter avec mon compte Spotify.
+* **En tant qu'utilisateur connecté avec Spotify,** je veux pouvoir voir les titres que j'ai le plus écouté durant les 4 dernières semaines, les 6 derniers mois ou depuis la création du compte.
+* **En tant qu'utilisateur connecté avec Spotify,** je veux pouvoir voir les artistes que j'ai le plus écoutés durant les 4 dernières semaines, les 6 derniers mois ou depuis la création du compte.
+* **En tant qu'utilisateur connecté avec Spotify,** je veux pouvoir me déconecter.
 
 ## :lipstick: Maquette
-![maquette](./documentation/images/mock.png)
 
-## :art: Moodboard
-![palette de couleur](./documentation/images/moodboard.png)
-![palette de couleur](./documentation/images/color.png)
-Je me suis principalement inspiré d'applications populaires telles que Instagram pour la page d'accueil ou alors Tinder pour le profil. J'ai aussi trouvé certaines inspirations sur Dribbble.
+Dans cette partie il n'est pas nécessaire d'être connecté avec Spotify.
+![maquette](./documentation/images/mockup-1.png)
+Connexion
+![maquette](./documentation/images/mockup-2.png)
+Dans cette partie il est nécessaire d'être connecté avec Spotify.
+![maquette](./documentation/images/mockup-3.png)
+
+## :zap: Applications existantes
+
+Après quelques recherches, un site internet et une application proposent la même chose. Les 2 ont des inconvénients que j'aimerais corriger dans mon application.
+
+* https://www.statsforspotify.com/ </br>
+Ce site permet de voir les artistes et les musiques les plus écoutées durant les 4 dernières semaines, les 6 derniers mois ou depuis la création du compte. Le principal problème de ce site internet c'est l'interface utilisateur qui n'est pas très agréable a utilisé.
+![appli existante](./documentation/images/exist-1.png)
+
+* https://stats.fm/ (Application Android & IOS) <br>
+Cette application propose plus de fonctionnalités que ce que je vais proposer dans mon application. Son principal problème c'est qu'elle est payante. Un autre problème que j'ai pu trouver dans cette application c'est le manque de lisibilité. Ils ont voulu ajouter tellement de chose que ça en devient presque illisible. L'application est beaucoup trop surchargée.
+![appli existante](./documentation/images/exist-2.png)
+
 
 ## :world_map: Site Map
+
 ![site map](./documentation/images/sitemap.png)
 
-Chaque rectangle bleu correspond à une page dans l'application. Chaque mot en noir correspond à un bouton et chaque flèche a une connexion entre 2 pages.
+Chaque rectangle correspond à une page dans l'application. Chaque mot en noir correspond à un bouton et chaque flèche à une connexion entre 2 pages.
 
 ## :card_file_box: Ressources
 
-[:see_no_evil: Emoji](https://www.figma.com/community/file/937774188065101204)
-[:art: Palette de couleur](https://flatuicolors.com/palette/us)
+[:iphone: Image Login](https://www.figma.com/community/file/880534892514982400)
 [:camera_flash: Image Login](https://unsplash.com/photos/tIr-PWgSYB4)
 [:bookmark: Icones](https://www.figma.com/community/file/937774188065101204)
