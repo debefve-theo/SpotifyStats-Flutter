@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/menu_bar.dart';
 import '../widgets/stats/bottom_menu_widget.dart';
 import '../widgets/stats/stats_card_widget.dart';
 import '../widgets/stats/top_menu_widget.dart';
@@ -10,12 +9,7 @@ class StatsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        toolbarHeight: 0,
-        backgroundColor: Colors.white,
-      ),
-      body: Center(
+    return Center(
         child: Column(
           children: [
             const TopMenu(),
@@ -34,8 +28,6 @@ class StatsScreen extends StatelessWidget {
             const BottomMenu(),
           ],
         ),
-      ),
-      bottomNavigationBar: const MenuBar(),
     );
   }
 }
