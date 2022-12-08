@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/menu_bar.dart';
+
 class TopScreen extends StatelessWidget {
   const TopScreen({super.key});
 
@@ -14,6 +16,7 @@ class TopScreen extends StatelessWidget {
       body: (
 
       ),
+      bottomNavigationBar: const MenuBar(),
     );
   }
 }

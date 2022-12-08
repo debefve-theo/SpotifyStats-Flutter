@@ -14,6 +14,7 @@ class StatsScreen extends StatelessWidget {
       body: (
 
       ),
+      bottomNavigationBar: const MenuBar(),
     );
   }
 }
