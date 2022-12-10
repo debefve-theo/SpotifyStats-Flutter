@@ -48,12 +48,16 @@ class ProfilCardLog extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Container(
-                      margin: const EdgeInsets.only(right: 10.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50.0),
-                        child: Image.network(imagePath,
-                            width: 60, height: 60, fit: BoxFit.fill),
-                      ),
+                        margin: const EdgeInsets.only(right: 10.0),
+                        child: CircleAvatar(
+                          radius: 30,
+                          backgroundColor: Colors.white,
+                          child: Padding(
+                            padding: const EdgeInsets.all(2), // Border radius
+                            child: ClipOval(child: Image.network(imagePath,
+                                width: 60, height: 60, fit: BoxFit.fill)),
+                          ),
+                        )
                     ),
                   ],
                 ),
