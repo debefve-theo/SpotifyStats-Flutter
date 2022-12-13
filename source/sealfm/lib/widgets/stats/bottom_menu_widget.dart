@@ -25,10 +25,8 @@ class BottomMenu extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(
                         top: 3.0, bottom: 3.0, right: 5.0, left: 10.0),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: Colors.white,
+                    child: TextButton(
+                      style: TextButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0)),
                       ),
@@ -50,10 +48,8 @@ class BottomMenu extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(
                         top: 3.0, bottom: 3.0, right: 5.0, left: 5.0),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: Colors.white,
+                    child: TextButton(
+                      style: TextButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0)),
                       ),
@@ -75,10 +71,8 @@ class BottomMenu extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.only(
                         top: 3.0, bottom: 3.0, right: 10.0, left: 5.0),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        backgroundColor: Colors.white,
+                    child: TextButton(
+                      style: TextButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0)),
                       ),
