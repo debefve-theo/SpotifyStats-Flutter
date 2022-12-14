@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:spotify/spotify.dart';
 
 import 'utilities/route.dart';
+import 'utilities/controller.dart';
 
 void main() {
   runApp(
