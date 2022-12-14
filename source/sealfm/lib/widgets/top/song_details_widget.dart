@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:spotify/spotify.dart' as spotify;
 
 class SongWidget extends StatelessWidget {
-  const SongWidget({super.key});
+  //const SongWidget({super.key});
+
+  final int number;
+  final String song;
+  final String artist;
+  final String path;
+
+  const SongWidget({super.key, required this.number, required this.song, required this.artist, required this.path, });
 
   @override
   Widget build(BuildContext context) {
-    var number = '1';
-    var song = 'Unholy (feat. Kim Petras)';
-    var artist = 'Sam Smith, Kim Petras';
-    var imagePath =
-        'https://i.scdn.co/image/ab67616d0000b273a935e4689f15953311772cc4';
 
     return Container(
         margin: const EdgeInsets.only(bottom: 10.0),
         child: Row(children: <Widget>[
           ClipRRect(
             borderRadius: BorderRadius.circular(12.0),
-            child: Image.network(imagePath,
+            child: Image.network(path,
                 width: 60, height: 60, fit: BoxFit.fill),
           ),
           Padding(
@@ -35,7 +38,7 @@ class SongWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  song,
+                  concatName(song),
                   style: GoogleFonts.nunito(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
@@ -53,4 +56,15 @@ class SongWidget extends StatelessWidget {
           ),
         ]));
   }
+}
+
+String concatName(String val) {
+
+  if(val.length > 30) {
+    var s = val.substring(0, 26);
+    s += ' ...';
+    return s;
+  }
+
+  return val;
 }

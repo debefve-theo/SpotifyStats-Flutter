@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sealfm/utilities/icons.dart';
 import 'package:sealfm/widgets/top/song_details_widget.dart';
+import '../../utilities/controller.dart';
 
 class TopCardOpen extends StatelessWidget {
   const TopCardOpen({super.key});
@@ -75,25 +76,15 @@ class TopCardOpen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(15.0),
                     child: Column(
-                      children: const <Widget>[
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
-                        SongWidget(),
+                      children: <Widget>[
+                        for (var i = 0; i < 50; i++)
+                          SongWidget(
+                            number: i+1,
+                            song: topData[i].name,
+                            //artist: topData[i].artists,
+                            artist: topData[i].artists[0].name,
+                            path: topData[i].album.images[2].url,
+                          ),
                       ],
                     ),
                   ),

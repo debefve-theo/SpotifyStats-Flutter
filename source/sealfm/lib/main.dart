@@ -5,7 +5,8 @@ import 'package:spotify/spotify.dart';
 import 'utilities/route.dart';
 import 'utilities/controller.dart';
 
-void main() {
+void main() async{
+  await getTopSong();
   runApp(
     MaterialApp(
       title: 'Seal.fm',
