@@ -18,7 +18,7 @@ class ProfilCardLog extends StatelessWidget {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
             ),
-            margin: const EdgeInsets.only(left: 20.0, right: 100.0, top: 20.0),
+            margin: const EdgeInsets.only(left: 20.0, right: 20.0, top: 20.0),
             elevation: 4,
             color: const Color(0xFF0E4DA4),
             child: Row(

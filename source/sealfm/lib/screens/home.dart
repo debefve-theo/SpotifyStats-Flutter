@@ -12,12 +12,26 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-        children: const [
-          ProfilCardLog(),
-          ProfilCard(),
-          WeeklyTopAlbumCard(),
-          WeeklyTopSongsCard(),
-          WeeklyTopArtistsCard()
+        children: [
+          Row(
+            children: [
+              const SizedBox(
+                  width: 280,
+                  child: ProfilCardLog()
+              ),
+              IconButton(
+                icon: const Icon(Icons.settings),
+                onPressed: () {
+                  Navigator.pushNamed(context, '/settings');
+                },
+              ),
+            ],
+          ),
+
+          //ProfilCard(),
+          const WeeklyTopAlbumCard(),
+          const WeeklyTopSongsCard(),
+          const WeeklyTopArtistsCard()
         ],
     );
   }
