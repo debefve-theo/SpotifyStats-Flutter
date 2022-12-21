@@ -6,7 +6,7 @@ import 'utilities/route.dart';
 import 'utilities/controller.dart';
 
 void main() async{
-  await getTopSong();
+  await getTopSong(countries[0].playlistId);
   runApp(
     MaterialApp(
       title: 'Seal.fm',
