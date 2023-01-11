@@ -12,7 +12,6 @@ class VersionCard extends StatelessWidget {
     var title = 'Weekly Top Albums';
     var subtitle = 'Belgium';
 
-
     var number = '1';
     var album = 'Civilisation Edition Ultime';
     var artist = 'Orelsan';

@@ -1,5 +1,13 @@
 import 'package:spotify/spotify.dart';
 
+const _scopes = [
+  'user-read-playback-state',
+  'user-follow-read',
+  'playlist-modify-private',
+  'user-library-read',
+  'user-read-recently-played'
+];
+
 var credentials = SpotifyApiCredentials(
   'bc84c651a7ab4ee784eb136b213e824f',
   '9cda999184dd4987bcdce50f7fab6e34',
@@ -26,14 +34,11 @@ Future getTopSong(String playlistId) async {
   }
 }
 
-Future getTopAlbum(String playlistId) async {
-  var spotify = await SpotifyApi.asyncFromCredentials(credentials);
-  var d = await spotify.playlists.getTracksByPlaylistId(playlistId).all();
-
-  topData.clear();
-  for (var track in d) {
-    topData.add(track);
-  }
+Uri getAuthLink() {
+  var redirect = 'com.example.apitop50:/oauth2redirect';
+  var grant = SpotifyApi.authorizationCodeGrant(credentials);
+  var authUri = grant.getAuthorizationUrl(Uri.parse(redirect!), scopes: _scopes);
+  return authUri;
 }
 
 class Country{

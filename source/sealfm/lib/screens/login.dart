@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sealfm/utilities/icons.dart';
+import '../utilities/controller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -27,9 +29,9 @@ class LoginScreen extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0)),
               ),
-              onPressed: () {
+              onPressed: _launchUrl,/*() {
                 Navigator.pushNamed(context, '/');
-              },
+              },*/
               icon: const Icon(
                 MyFlutterApp.spotify_blue,
                 color: Color(0xFF0E4DA4),
@@ -47,5 +49,12 @@ class LoginScreen extends StatelessWidget {
         )
       ],
     ));
+  }
+}
+
+Future<void> _launchUrl() async {
+  Uri url = getAuthLink();
+  if (!await launchUrl(url)) {
+    throw 'Could not launch $url';
   }
 }
