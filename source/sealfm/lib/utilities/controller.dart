@@ -26,6 +26,16 @@ Future getTopSong(String playlistId) async {
   }
 }
 
+Future getTopAlbum(String playlistId) async {
+  var spotify = await SpotifyApi.asyncFromCredentials(credentials);
+  var d = await spotify.playlists.getTracksByPlaylistId(playlistId).all();
+
+  topData.clear();
+  for (var track in d) {
+    topData.add(track);
+  }
+}
+
 class Country{
   String name;
   String playlistId;

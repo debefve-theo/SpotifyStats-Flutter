@@ -6,6 +6,7 @@ import '../screens/top.dart';
 import '../screens/stats.dart';
 import '../screens/settings.dart';
 import '../screens/login.dart';
+import '../screens/more.dart';
 
 var customRoutes = <String, WidgetBuilder>{
   '/': (context) => const MainScreen(),
@@ -14,4 +15,5 @@ var customRoutes = <String, WidgetBuilder>{
   //'/stats': (context) => const StatsScreen(),
   '/settings': (context) => const SettingsScreen(),
   '/login': (context) => const LoginScreen(),
+  '/more': (context) => const MoreScreen(),
 };

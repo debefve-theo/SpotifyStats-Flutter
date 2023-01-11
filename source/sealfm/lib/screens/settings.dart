@@ -14,7 +14,7 @@ class SettingsScreen extends StatelessWidget {
       body: SafeArea(
           child: Stack(
             children: const [
-              TopMenu(),
+              TopMenu(title: "Settings"),
               VersionCard(),
               LogoutButton(),
             ],

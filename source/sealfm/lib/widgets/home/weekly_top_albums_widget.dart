@@ -102,7 +102,7 @@ class WeeklyTopAlbumCard extends StatelessWidget {
                               borderRadius: BorderRadius.circular(10.0)),
                         ),
                         onPressed: () {
-                          Navigator.pushNamed(context, '/top');
+                          Navigator.pushNamed(context, '/more');
                         },
                         child: Text(
                           'See more ...',
