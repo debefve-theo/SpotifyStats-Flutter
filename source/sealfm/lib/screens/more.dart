@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/settings/top_bar_widget.dart';
-import '../widgets/top/list_widget.dart';
+import '../widgets/more/list.dart';
 import '../utilities/controller.dart';
 
 class MoreScreen extends StatelessWidget {
@@ -18,7 +18,7 @@ class MoreScreen extends StatelessWidget {
             ListView(
               children: [
                 Container(height: 90.0,),
-                ListW(data: topData,),
+                ListWidget(data: topData,),
                 Container(height: 80.0,),
               ],
             ),

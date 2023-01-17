@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:spotify/spotify.dart';
 
 const _scopes = [
@@ -35,7 +37,7 @@ Future getTopSong(String playlistId) async {
 }
 
 Uri getAuthLink() {
-  var redirect = 'com.example.apitop50:/oauth2redirect';
+  var redirect = 'https://theo-debefve.be';
   var grant = SpotifyApi.authorizationCodeGrant(credentials);
   var authUri = grant.getAuthorizationUrl(Uri.parse(redirect!), scopes: _scopes);
   return authUri;
@@ -47,4 +49,30 @@ class Country{
   var list = [];
 
   Country({required this.name, required this.playlistId, required this.list});
+}
+
+Future<SpotifyApi?> _getUserAuthenticatedSpotifyApi() async {
+
+  var credentials = SpotifyApiCredentials('bc84c651a7ab4ee784eb136b213e824f', '9cda999184dd4987bcdce50f7fab6e34');
+
+  print('Please paste your redirect url (from your spotify application\'s redirect url):');
+  //var redirect = stdin.readLineSync();
+  //var redirect = 'com.example.sealfm:/oauth2redirect';
+  var redirect = 'https://theo-debefve.be';
+
+  var grant = SpotifyApi.authorizationCodeGrant(credentials);
+  var authUri = grant.getAuthorizationUrl(Uri.parse(redirect!), scopes: _scopes);
+
+  print('Please paste this url \n\n$authUri\n\nto your browser and enter the redirected url:');
+  var redirectUrl;
+  var userInput = stdin.readLineSync();
+
+  if (userInput == null || (redirectUrl = Uri.tryParse(userInput)) == null) {
+    print('Invalid redirect url');
+    return null;
+  }
+
+  var client =
+  await grant.handleAuthorizationResponse(redirectUrl.queryParameters);
+  return SpotifyApi.fromClient(client);
 }
