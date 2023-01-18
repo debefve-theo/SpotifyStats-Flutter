@@ -83,7 +83,8 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
           dropdownValue = value!;
           for (var c in countries) {
             if(c.name == dropdownValue) {
-              getTopSong(c.playlistId);
+              //getTopSong(c.playlistId);
+              currentPlaylistId = c.playlistId;
             }
           }
         });

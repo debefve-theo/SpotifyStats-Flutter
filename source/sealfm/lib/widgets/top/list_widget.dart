@@ -97,14 +97,16 @@ class _ListWState extends State<ListW> {
                             ),
                           ],
                         ),
-                        for (var i = 0; i < 50; i++)
-                          SongWidget(
-                            number: i+1,
-                            song: widget.data[i].name,
-                            //artist: topData[i].artists,
-                            artist: widget.data[i].artists[0].name,
-                            path: widget.data[i].album.images[2].url,
-                          ),
+                        for (var country in countries)
+                          if(country.playlistId == currentPlaylistId)
+                            for (var i = 0; i < 50; i++)
+                              SongWidget(
+                                number: i+1,
+                                song: country.list[i].name,
+                                //artist: topData[i].artists,
+                                artist: country.list[i].artists[0].name,
+                                path: country.list[i].album.images[2].url,
+                              ),
                       ],
                     ),
                   ),
