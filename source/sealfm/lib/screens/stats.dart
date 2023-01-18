@@ -10,22 +10,10 @@ class StatsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Stack(
-      children: [
-        ListView(
-          children: [
-            Container(height: 90.0,),
-            const Line(),
-            const Line(),
-            const Line(),
-            const Line(),
-            const Line(),
-            const Line(),
-            const Line(),
-            Container(height: 80.0,),
-          ],
-        ),
-        const TopMenu(),
-        const BottomMenu(),
+      children: const [
+        LVstats(),
+        TopMenu(),
+        BottomMenu(),
       ],
     );
   }

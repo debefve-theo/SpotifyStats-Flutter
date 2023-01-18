@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import '../../utilities/test_data.dart';
 
 class StatsCard extends StatelessWidget {
-  const StatsCard({super.key});
+
+  String imagePath;
+  String title;
+  String artist;
+
+  StatsCard({super.key, required this.artist, required this.title, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
-    var imagePath =
-        'https://i.scdn.co/image/ab67616d00001e022724364cd86bb791926b6cc8';
-
-    var number = '1';
-    var song = 'Civilisation Edition Ultime';
-    var artist = 'Orelsan';
 
     return Center(
       child: Column(
@@ -40,7 +40,7 @@ class StatsCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          song,
+                          title,
                           style: GoogleFonts.nunito(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
@@ -65,7 +65,15 @@ class StatsCard extends StatelessWidget {
 }
 
 class Line extends StatelessWidget {
-  const Line({super.key});
+
+  String artist1;
+  String title1;
+  String imagePath1;
+  String artist2;
+  String title2;
+  String imagePath2;
+
+  Line({super.key, required this.artist1, required this.title1, required this.imagePath1, required this.artist2, required this.title2, required this.imagePath2});
 
   @override
   Widget build(BuildContext context) {
@@ -75,16 +83,39 @@ class Line extends StatelessWidget {
           margin: const EdgeInsets.only(left: 18.0, right: 18.0),
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
-                Expanded(child: Center(child: StatsCard())),
-                VerticalDivider(width: 10.0),
-                Expanded(child: Center(child: StatsCard())),
+              children: <Widget>[
+                Expanded(child: Center(child: StatsCard(title: title1, artist: artist1, imagePath: imagePath1,))),
+                const VerticalDivider(width: 10.0),
+                Expanded(child: Center(child: StatsCard(title: title2, artist: artist2, imagePath: imagePath2,))),
               ]),
         ),
         const Divider(
           height: 10.0,
           color: Colors.transparent,
         ),
+      ],
+    );
+  }
+}
+
+class LVstats extends StatelessWidget {
+  const LVstats({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: [
+        Container(height: 90.0,),
+        for (var i = 0; i < 30; i+=2)
+          Line(
+            artist1: StatsSongWeek[i].artist,
+            title1: StatsSongWeek[i].title,
+            imagePath1: StatsSongWeek[i].cover,
+            artist2: StatsSongWeek[i+1].artist,
+            title2: StatsSongWeek[i+1].title,
+            imagePath2: StatsSongWeek[i+1].cover,
+          ),
+        Container(height: 80.0,),
       ],
     );
   }
