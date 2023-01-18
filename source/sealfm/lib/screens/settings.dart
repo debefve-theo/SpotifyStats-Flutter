@@ -4,7 +4,7 @@ import '../widgets/home/weekly_top_artists_widget.dart';
 import '../widgets/settings/top_bar_widget.dart';
 import '../widgets/settings/logout_button.dart';
 import '../widgets/settings/version_widget.dart';
-import '../widgets/settings/dark_mode_widget.dart';
+import '../widgets/settings/edit_settings_widget.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -19,7 +19,7 @@ class SettingsScreen extends StatelessWidget {
               Column(
                 children: const [
                   TopMenu(title: "Settings"),
-                  DarkMode(),
+                  Language(),
                   VersionCard(),
                 ],
               ),
