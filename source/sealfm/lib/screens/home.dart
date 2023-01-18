@@ -19,11 +19,19 @@ class HomeScreen extends StatelessWidget {
                   width: 280,
                   child: ProfilCardLog()
               ),
-              IconButton(
-                icon: const Icon(Icons.settings),
-                onPressed: () {
+              Card(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                margin: const EdgeInsets.only(left: 10.0, right: 0.0, top: 20.0),
+                elevation: 4,
+                color: Colors.white,
+                child:IconButton(
+                  icon: const Icon(Icons.settings),
+                  onPressed: () {
                   Navigator.pushNamed(context, '/settings');
                 },
+              ),
               ),
             ],
           ),

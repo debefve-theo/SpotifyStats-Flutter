@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sealfm/utilities/controller.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:sealfm/utilities/icons.dart';
 
 import 'song_widget.dart';
 
@@ -43,6 +44,33 @@ class _ListWState extends State<ListW> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Container(
+                              margin: const EdgeInsets.only(left: 0, bottom: 15.0),
+                              child: ElevatedButton.icon(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFF0E4DA4),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0)),
+                                ),
+                                onPressed: () {
+                                  //Navigator.pushNamed(context, '/top');
+                                  //setState(() { });
+                                  _launchUrl();
+                                },
+                                icon: const Icon(
+                                  MyFlutterApp.spotify_blue,
+                                  color: Colors.white,
+                                ),
+                                label: Text(
+                                  'Check on spotify',
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Container(
                               margin: const EdgeInsets.only(left: 15.0, bottom: 15.0),
                               child: ElevatedButton.icon(
                                 style: ElevatedButton.styleFrom(
@@ -60,7 +88,7 @@ class _ListWState extends State<ListW> {
                                 label: Text(
                                   'Reload',
                                   style: GoogleFonts.nunito(
-                                    fontSize: 15,
+                                    fontSize: 14,
                                     fontWeight: FontWeight.bold,
                                     color: Colors.white,
                                   ),
@@ -80,33 +108,7 @@ class _ListWState extends State<ListW> {
                       ],
                     ),
                   ),
-                  Container(
-                    margin: const EdgeInsets.only(left: 15.0, bottom: 15.0),
-                    child: ElevatedButton.icon(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF0E4DA4),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0)),
-                      ),
-                      onPressed: () {
-                        //Navigator.pushNamed(context, '/top');
-                        //setState(() { });
-                        _launchUrl();
-                      },
-                      icon: const Icon(
-                        Icons.home,
-                        color: Colors.white,
-                      ),
-                      label: Text(
-                        'Check on spotify',
-                        style: GoogleFonts.nunito(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                  ),
+
                 ]),
           ),
         ],

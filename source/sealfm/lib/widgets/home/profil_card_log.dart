@@ -10,7 +10,7 @@ class ProfilCardLog extends StatelessWidget {
     var imagePath =
         'https://i.scdn.co/image/ab6775700000ee851b80c46969290d58563a51c4';
 
-    return Center(
+    return Container(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
