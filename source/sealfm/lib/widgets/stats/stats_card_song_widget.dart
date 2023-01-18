@@ -29,8 +29,13 @@ class StatsCard extends StatelessWidget {
                 children: <Widget>[
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20.0),
-                    child: Image.network(
+                    /*child: Image.network(
                       imagePath,
+                    ),*/
+                    child: CachedNetworkImage(
+                      imageUrl: url,
+                      placeholder: (context,url) => CircularProgressIndicator(),
+                      errorWidget: (context,url,error) => new Icon(Icons.error),
                     ),
                   ),
                   Padding(

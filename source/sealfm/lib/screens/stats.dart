@@ -1,11 +1,8 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
-import '../widgets/stats/bottom_menu_widget.dart';
 import '../widgets/stats/stats_card_song_widget.dart';
 import '../widgets/stats/stats_card_artist_widget.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class StatsScreen extends StatefulWidget {
   const StatsScreen({super.key});
