@@ -14,8 +14,8 @@ class TopScreen extends StatelessWidget {
         ListView(
           children: [
             Container(height: 90.0,),
-            ListW(data: topData,),
-            Container(height: 80.0,),
+            ListW(data: topData, currentId: currentPlaylistId),
+            Container(height: 40.0,),
           ],
         ),
         const MenuW()

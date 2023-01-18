@@ -25,10 +25,13 @@ List<Country> countries = [
 ];
 
 var topData = [];
+var currentPlaylistId = '';
 
 Future getTopSong(String playlistId) async {
   var spotify = await SpotifyApi.asyncFromCredentials(credentials);
   var d = await spotify.playlists.getTracksByPlaylistId(playlistId).all();
+
+  currentPlaylistId = playlistId;
 
   topData.clear();
   for (var track in d) {

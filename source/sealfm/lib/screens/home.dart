@@ -31,7 +31,8 @@ class HomeScreen extends StatelessWidget {
           //ProfilCard(),
           const WeeklyTopAlbumCard(),
           const WeeklyTopSongsCard(),
-          const WeeklyTopArtistsCard()
+          const WeeklyTopArtistsCard(),
+          Container(height: 40.0,),
         ],
     );
   }

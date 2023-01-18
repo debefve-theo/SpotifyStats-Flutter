@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sealfm/utilities/controller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'song_widget.dart';
 
 class ListW extends StatefulWidget {
   List data;
+  var currentId;
 
-  ListW({super.key, required this.data});
+  ListW({super.key, required this.data, required this.currentId});
 
   @override
   State<ListW> createState() => _ListWState();
@@ -36,15 +39,36 @@ class _ListWState extends State<ListW> {
                     padding: const EdgeInsets.all(15.0),
                     child: Column(
                       children: <Widget>[
-                        /*for(Track t in topData)
-                            SongWidget(
-                              number: i,
-                              song: topData[i].name,
-                              //artist: topData[i].artists,
-                              artist: '---',
-                              //path: topData[i].id,
-                              path: 'https://i.scdn.co/image/ab67616d00001e022724364cd86bb791926b6cc8',
-                            ),*/
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.only(left: 15.0, bottom: 15.0),
+                              child: ElevatedButton.icon(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xFF0E4DA4),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10.0)),
+                                ),
+                                onPressed: () {
+                                  setState(() { });
+                                },
+                                icon: const Icon(
+                                  Icons.restart_alt,
+                                  color: Colors.white,
+                                ),
+                                label: Text(
+                                  'Reload',
+                                  style: GoogleFonts.nunito(
+                                    fontSize: 15,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
                         for (var i = 0; i < 50; i++)
                           SongWidget(
                             number: i+1,
@@ -66,7 +90,8 @@ class _ListWState extends State<ListW> {
                       ),
                       onPressed: () {
                         //Navigator.pushNamed(context, '/top');
-                        setState(() { });
+                        //setState(() { });
+                        _launchUrl();
                       },
                       icon: const Icon(
                         Icons.home,
@@ -87,5 +112,16 @@ class _ListWState extends State<ListW> {
         ],
       ),
     );
+  }
+}
+
+Future<void> _launchUrl() async {
+  //final Uri _url = Uri.parse('https://theo-debefve.be');
+  //var url = _url + currentPlaylistId;
+
+  Uri _url = Uri.parse('https://open.spotify.com/playlist/$currentPlaylistId');
+
+  if (!await launchUrl(_url)) {
+    throw 'Could not launch $_url';
   }
 }
