@@ -99,22 +99,44 @@ class Line extends StatelessWidget {
 }
 
 class songStats extends StatelessWidget {
-  const songStats({super.key});
+  int ind;
+  songStats({super.key, required this.ind});
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: [
         Container(height: 90.0,),
-        for (var i = 0; i < 30; i+=2)
-          Line(
-            artist1: StatsSongWeek[i].artist,
-            title1: StatsSongWeek[i].title,
-            imagePath1: StatsSongWeek[i].cover,
-            artist2: StatsSongWeek[i+1].artist,
-            title2: StatsSongWeek[i+1].title,
-            imagePath2: StatsSongWeek[i+1].cover,
-          ),
+        if(ind == 0)
+          for (var i = 0; i < 30; i+=2)
+            Line(
+              artist1: StatsSongWeek[i].artist,
+              title1: StatsSongWeek[i].title,
+              imagePath1: StatsSongWeek[i].cover,
+              artist2: StatsSongWeek[i+1].artist,
+              title2: StatsSongWeek[i+1].title,
+              imagePath2: StatsSongWeek[i+1].cover,
+            ),
+        if(ind == 1)
+          for (var i = 0; i < 30; i+=2)
+            Line(
+              artist1: StatsSongMonth[i].artist,
+              title1: StatsSongMonth[i].title,
+              imagePath1: StatsSongMonth[i].cover,
+              artist2: StatsSongMonth[i+1].artist,
+              title2: StatsSongMonth[i+1].title,
+              imagePath2: StatsSongMonth[i+1].cover,
+            ),
+        if(ind == 2)
+          for (var i = 0; i < 30; i+=2)
+            Line(
+              artist1: StatsSongAll[i].artist,
+              title1: StatsSongAll[i].title,
+              imagePath1: StatsSongAll[i].cover,
+              artist2: StatsSongAll[i+1].artist,
+              title2: StatsSongAll[i+1].title,
+              imagePath2: StatsSongAll[i+1].cover,
+            ),
         Container(height: 80.0,),
       ],
     );

@@ -99,22 +99,44 @@ class Line extends StatelessWidget {
 }
 
 class artistStats extends StatelessWidget {
-  const artistStats({super.key});
+  int ind;
+  artistStats({super.key, required this.ind});
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: [
         Container(height: 90.0,),
-        for (var i = 0; i < 20; i+=2)
-          Line(
-            artist1: StatsArtistWeek[i].artist,
-            popularity1: StatsArtistWeek[i].popularity,
-            imagePath1: StatsArtistWeek[i].cover,
-            artist2: StatsArtistWeek[i+1].artist,
-            popularity2: StatsArtistWeek[i+1].popularity,
-            imagePath2: StatsArtistWeek[i+1].cover,
-          ),
+        if(ind == 0)
+          for (var i = 0; i < 20; i+=2)
+            Line(
+              artist1: StatsArtistWeek[i].artist,
+              popularity1: StatsArtistWeek[i].popularity,
+              imagePath1: StatsArtistWeek[i].cover,
+              artist2: StatsArtistWeek[i+1].artist,
+              popularity2: StatsArtistWeek[i+1].popularity,
+              imagePath2: StatsArtistWeek[i+1].cover,
+            ),
+        if(ind == 1)
+          for (var i = 0; i < 20; i+=2)
+            Line(
+              artist1: StatsArtistMonth[i].artist,
+              popularity1: StatsArtistMonth[i].popularity,
+              imagePath1: StatsArtistMonth[i].cover,
+              artist2: StatsArtistMonth[i+1].artist,
+              popularity2: StatsArtistMonth[i+1].popularity,
+              imagePath2: StatsArtistMonth[i+1].cover,
+            ),
+        if(ind == 2)
+          for (var i = 0; i < 20; i+=2)
+            Line(
+              artist1: StatsArtistAll[i].artist,
+              popularity1: StatsArtistAll[i].popularity,
+              imagePath1: StatsArtistAll[i].cover,
+              artist2: StatsArtistAll[i+1].artist,
+              popularity2: StatsArtistAll[i+1].popularity,
+              imagePath2: StatsArtistAll[i+1].cover,
+            ),
         Container(height: 80.0,),
       ],
     );
