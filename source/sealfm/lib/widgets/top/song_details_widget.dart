@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spotify/spotify.dart' as spotify;
@@ -20,8 +21,14 @@ class SongWidget extends StatelessWidget {
         child: Row(children: <Widget>[
           ClipRRect(
             borderRadius: BorderRadius.circular(12.0),
-            child: Image.network(path,
-                width: 60, height: 60, fit: BoxFit.fill),
+            child: CachedNetworkImage(
+              imageUrl: path,
+              width: 60,
+              height: 60,
+              fit: BoxFit.fill,
+              placeholder: (context, url) => const CircularProgressIndicator(),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(left: 10.0),

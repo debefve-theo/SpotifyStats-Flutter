@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../utilities/test_data.dart';
@@ -29,8 +30,10 @@ class StatsCard extends StatelessWidget {
                 children: <Widget>[
                   ClipRRect(
                     borderRadius: BorderRadius.circular(20.0),
-                    child: Image.network(
-                      imagePath,
+                    child: CachedNetworkImage(
+                      imageUrl: imagePath,
+                      placeholder: (context, url) => const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => const Icon(Icons.error),
                     ),
                   ),
                   Padding(

@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -54,8 +55,16 @@ class ProfilCardLog extends StatelessWidget {
                           backgroundColor: Colors.white,
                           child: Padding(
                             padding: const EdgeInsets.all(2), // Border radius
-                            child: ClipOval(child: Image.network(imagePath,
-                                width: 60, height: 60, fit: BoxFit.fill)),
+                            child: ClipOval(
+                              child: CachedNetworkImage(
+                                imageUrl: imagePath,
+                                width: 60,
+                                height: 60,
+                                fit: BoxFit.fill,
+                                placeholder: (context, url) => const CircularProgressIndicator(),
+                                errorWidget: (context, url, error) => const Icon(Icons.error),
+                              ),
+                            ),
                           ),
                         )
                     ),
