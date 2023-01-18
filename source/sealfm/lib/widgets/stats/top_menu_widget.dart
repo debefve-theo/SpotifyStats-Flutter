@@ -31,7 +31,7 @@ class TopMenu extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0)),
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/stats');
+                        Navigator.pushNamed(context, '/statsS');
                       },
                       child: Text(
                         'Songs',
@@ -54,7 +54,7 @@ class TopMenu extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0)),
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/stats');
+                        Navigator.pushNamed(context, '/statsA');
                       },
                       child: Text(
                         'Artists',

@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../screens/main_screen.dart';
-import '../screens/home.dart';
-import '../screens/top.dart';
-import '../screens/stats.dart';
 import '../screens/settings.dart';
 import '../screens/login.dart';
 import '../screens/more.dart';

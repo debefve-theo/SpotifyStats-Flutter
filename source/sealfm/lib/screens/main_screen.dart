@@ -17,7 +17,7 @@ class _BasicBottomNavBarState extends State<MainScreen> {
   static const List<Widget> _pages = <Widget>[
     TopScreen(),
     HomeScreen(),
-    StatsScreen()
+    StatsScreen(),
   ];
 
   void _onItemTapped(int index) {

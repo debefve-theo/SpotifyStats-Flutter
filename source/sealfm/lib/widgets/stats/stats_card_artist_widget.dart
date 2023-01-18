@@ -5,10 +5,10 @@ import '../../utilities/test_data.dart';
 class StatsCard extends StatelessWidget {
 
   String imagePath;
-  String title;
+  int popularity;
   String artist;
 
-  StatsCard({super.key, required this.artist, required this.title, required this.imagePath});
+  StatsCard({super.key, required this.artist, required this.popularity, required this.imagePath});
 
   @override
   Widget build(BuildContext context) {
@@ -40,14 +40,14 @@ class StatsCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text(
-                          title,
+                          artist,
                           style: GoogleFonts.nunito(
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                               color: Colors.black),
                         ),
                         Text(
-                          artist,
+                          'Popularity: $popularity',
                           style: GoogleFonts.nunito(
                               fontSize: 14,
                               fontWeight: FontWeight.normal,
@@ -67,13 +67,13 @@ class StatsCard extends StatelessWidget {
 class Line extends StatelessWidget {
 
   String artist1;
-  String title1;
+  int popularity1;
   String imagePath1;
   String artist2;
-  String title2;
+  int popularity2;
   String imagePath2;
 
-  Line({super.key, required this.artist1, required this.title1, required this.imagePath1, required this.artist2, required this.title2, required this.imagePath2});
+  Line({super.key, required this.artist1, required this.popularity1, required this.imagePath1, required this.artist2, required this.popularity2, required this.imagePath2});
 
   @override
   Widget build(BuildContext context) {
@@ -84,9 +84,9 @@ class Line extends StatelessWidget {
           child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Expanded(child: Center(child: StatsCard(title: title1, artist: artist1, imagePath: imagePath1,))),
+                Expanded(child: Center(child: StatsCard(popularity: popularity1, artist: artist1, imagePath: imagePath1,))),
                 const VerticalDivider(width: 10.0),
-                Expanded(child: Center(child: StatsCard(title: title2, artist: artist2, imagePath: imagePath2,))),
+                Expanded(child: Center(child: StatsCard(popularity: popularity2, artist: artist2, imagePath: imagePath2,))),
               ]),
         ),
         const Divider(
@@ -98,22 +98,22 @@ class Line extends StatelessWidget {
   }
 }
 
-class LVstats extends StatelessWidget {
-  const LVstats({super.key});
+class artistStats extends StatelessWidget {
+  const artistStats({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView(
       children: [
         Container(height: 90.0,),
-        for (var i = 0; i < 30; i+=2)
+        for (var i = 0; i < 20; i+=2)
           Line(
-            artist1: StatsSongWeek[i].artist,
-            title1: StatsSongWeek[i].title,
-            imagePath1: StatsSongWeek[i].cover,
-            artist2: StatsSongWeek[i+1].artist,
-            title2: StatsSongWeek[i+1].title,
-            imagePath2: StatsSongWeek[i+1].cover,
+            artist1: StatsArtistWeek[i].artist,
+            popularity1: StatsArtistWeek[i].popularity,
+            imagePath1: StatsArtistWeek[i].cover,
+            artist2: StatsArtistWeek[i+1].artist,
+            popularity2: StatsArtistWeek[i+1].popularity,
+            imagePath2: StatsArtistWeek[i+1].cover,
           ),
         Container(height: 80.0,),
       ],
