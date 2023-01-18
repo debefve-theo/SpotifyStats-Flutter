@@ -5,6 +5,7 @@ import '../widgets/settings/top_bar_widget.dart';
 import '../widgets/settings/logout_button.dart';
 import '../widgets/settings/version_widget.dart';
 import '../widgets/settings/edit_settings_widget.dart';
+import '../widgets/settings/account_widget.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -20,12 +21,12 @@ class SettingsScreen extends StatelessWidget {
                 children: const [
                   TopMenu(title: "Settings"),
                   Language(),
+                  Account(),
                   VersionCard(),
                 ],
               ),
               const LogoutButton(),
             ],
-
           ),
       ),
     );

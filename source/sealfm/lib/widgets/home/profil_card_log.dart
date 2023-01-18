@@ -8,7 +8,7 @@ class ProfilCardLog extends StatelessWidget {
   Widget build(BuildContext context) {
     var username = 'Theo Debefve';
     var imagePath =
-        'https://i.scdn.co/image/ab6775700000ee8546aa903847c90b706e8e0c0d';
+        'https://i.scdn.co/image/ab6775700000ee851b80c46969290d58563a51c4';
 
     return Center(
       child: Column(
