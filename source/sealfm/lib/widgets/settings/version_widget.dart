@@ -94,8 +94,7 @@ class VersionCard extends StatelessWidget {
                     ),
                     ClipRRect(
                       borderRadius: BorderRadius.circular(12.0),
-                      child: Image.asset('assets/img/logo.png',
-                          width: 80, height: 60, fit: BoxFit.fill),
+                      child: Image.asset('assets/img/logo.png', width: 80, height: 60, fit: BoxFit.fill),
                     ),
                   ]),
                   Container(

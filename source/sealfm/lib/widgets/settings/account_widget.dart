@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -67,13 +68,21 @@ class Account extends StatelessWidget {
                                 margin: const EdgeInsets.only(right: 10.0),
                                 child: CircleAvatar(
                                   radius: 30,
-                                  backgroundColor: Colors.white,
+                                  backgroundColor: const Color(0xFF0E4DA4),
                                   child: Padding(
                                     padding: const EdgeInsets.all(2), // Border radius
-                                    child: ClipOval(child: Image.network(imagePath,
-                                        width: 60, height: 60, fit: BoxFit.fill)),
+                                    child: ClipOval(
+                                      child: CachedNetworkImage(
+                                        imageUrl: imagePath,
+                                        width: 60,
+                                        height: 60,
+                                        fit: BoxFit.fill,
+                                        placeholder: (context, url) => const CircularProgressIndicator(),
+                                        errorWidget: (context, url, error) => const Icon(Icons.error),
+                                      ),
+                                    ),
                                   ),
-                                )
+                                ),
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -98,8 +107,8 @@ class Account extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),
-                  ]),
+                    //),
+                    )]),
                 ]),
           ),
         ),
