@@ -103,7 +103,6 @@ class _ListWState extends State<ListW> {
                               SongWidget(
                                 number: i+1,
                                 song: country.list[i].name,
-                                //artist: topData[i].artists,
                                 artist: country.list[i].artists[0].name,
                                 path: country.list[i].album.images[2].url,
                               ),
