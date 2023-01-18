@@ -20,7 +20,7 @@ class VersionCard extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Container(
-          height: 80,
+          height: 0,
         ),
         Card(
           shape: RoundedRectangleBorder(
