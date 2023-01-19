@@ -41,7 +41,7 @@ class _ListWState extends State<ListW> {
                     child: Column(
                       children: <Widget>[
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
                             Container(
                               margin: const EdgeInsets.only(left: 0, bottom: 15.0),
@@ -62,31 +62,6 @@ class _ListWState extends State<ListW> {
                                 ),
                                 label: Text(
                                   'Check on spotify',
-                                  style: GoogleFonts.nunito(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Container(
-                              margin: const EdgeInsets.only(left: 15.0, bottom: 15.0),
-                              child: ElevatedButton.icon(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: const Color(0xFF0E4DA4),
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(10.0)),
-                                ),
-                                onPressed: () {
-                                  setState(() { });
-                                },
-                                icon: const Icon(
-                                  Icons.restart_alt,
-                                  color: Colors.white,
-                                ),
-                                label: Text(
-                                  'Reload',
                                   style: GoogleFonts.nunito(
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold,

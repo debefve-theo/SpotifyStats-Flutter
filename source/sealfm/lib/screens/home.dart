@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/home/currently_playing.dart';
 import '../widgets/home/profil_card_log.dart';
 import '../widgets/home/profil_card_not_log.dart';
 import '../widgets/home/weekly_top_albums_widget.dart';
@@ -29,14 +30,15 @@ class HomeScreen extends StatelessWidget {
                 child:IconButton(
                   icon: const Icon(Icons.settings),
                   onPressed: () {
-                  Navigator.pushNamed(context, '/settings');
-                },
-              ),
+                    Navigator.pushNamed(context, '/settings');
+                  },
+                ),
               ),
             ],
           ),
 
           //ProfilCard(),
+          //const CurrentlyPlaying(),
           const WeeklyTopAlbumCard(),
           const WeeklyTopSongsCard(),
           const WeeklyTopArtistsCard(),
