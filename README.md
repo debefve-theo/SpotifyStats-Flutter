@@ -8,7 +8,9 @@ L’objectif de ce projet est de donner un cadre pour développer une applicatio
 
 ## :iphone: Description de l'application
 
-Seal.fm est une application qui permet de voir vos musique et artiste préférée sur Spotify. Vous pouvez aussi consulter les musiques les plus écoutées en Belgique et dans le monde. Une simple connexion avec votre compte Spotify sera nécessaire pour utiliser l'application.
+Seal.fm est une application qui permet de voir vos musique et artiste préférée sur Spotify. Vous pouvez aussi consulter les musiques les plus écoutées en Belgique et dans le monde. Une simple connexion avec votre compte Spotify sera nécessaire pour utiliser l'application.</br>
+
+![logo](./documentation/images/song.gif)
 
 ## :dizzy: Fonctionnalités de l'application
 
@@ -48,6 +50,12 @@ Cette application propose plus de fonctionnalités que ce que je vais proposer d
 ![site map](./documentation/images/sitemap.png)
 
 Chaque rectangle correspond à une page dans l'application. Chaque mot en noir correspond à un bouton et chaque flèche à une connexion entre 2 pages.
+
+## :rocket: Démonstration
+![logo](./documentation/images/top.gif)</br>
+![logo](./documentation/images/artist.gif)</br>
+![logo](./documentation/images/settings.gif)</br>
+![logo](./documentation/images/logout.gif)</br>
 
 ## :card_file_box: Ressources
 
